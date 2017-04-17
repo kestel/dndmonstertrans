@@ -30,6 +30,7 @@ def replace_other(line, dic):
 def replacer(text, dic):
     translated_text = ""
     for line in text.splitlines():
+        line = line.replace('−', '-')
         line = line.replace(bytes.fromhex('2212').decode("utf-8"), "-")
         if "languages" in line.lower():
             if "understand" in line.lower():
