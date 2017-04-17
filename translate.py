@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.5
 
 import re
 # подцепляем словарь из внешнего файла
@@ -16,7 +16,8 @@ def replace_lang(text, dic):
         try:
             langru = langru + dic[lang] + ", "
         except:
-            langru = langru + lang + ", "
+            return text
+            
     return langru[:-2]
 
 
@@ -24,6 +25,7 @@ def replace_other(line, dic):
     """Заменяем всё подряд, что не попало под другие фильтры"""
     for i, j in dic.items():
         line = line.replace(i, j)
+        
     return line
 
 
@@ -33,10 +35,7 @@ def replacer(text, dic):
         line = line.replace(b'\xc3\xa2\xc2\x88\xc2\x92'.decode('utf-8'), '-')
         line = line.replace(b'\xc3\xa2\xc2\x80\xc2\x99'.decode('utf-8'), "'")
         if "languages" in line.lower():
-            if "understand" in line.lower():
-                pass
-            else:
-                line = replace_lang(line, dictionary.lang_dict)
+            line = replace_lang(line, dictionary.lang_dict)
             
         if "multiattack" in line.lower():
             line = re.sub(r"Multiattack. ([\s\w]+) makes (\w+) melee.+", r"Мультиатака. \1 делает \2 рукопашные атаки.", line)
@@ -50,9 +49,7 @@ def replacer(text, dic):
         
         # и собираем текст заново построчно
         translated_text = translated_text + "\r\n" + line
-        
-        print(translated_text.encode('utf-8'))
-        
+               
     return translated_text
 
 
@@ -67,7 +64,7 @@ def main():
     with open(filename, 'r') as f:
         input_text = f.read()
     
-    translated_text = replacer(input_text, dictionary.words_dict)
+    translated_text = replacer(input_text, dictionary.all_dict)
     print(translated_text)
 
 

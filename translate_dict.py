@@ -91,7 +91,7 @@ words_dict = {
     "Restrained": "Опутанный",
     "Stunned": "Ошеломлённый",
     "Unconscious": "Бессознательный",
-
+    "": "",
     "Actions": "Действия",
     "ACTIONS": "Действия",
     "Multiattack.": "Мультиатака.",
@@ -107,8 +107,9 @@ words_dict = {
     " to hit, range": " к попаданию, дистанция",
     "(Recharge": "(Перезарядка",
     "Damage Vulnerabilities ": "Уязвимость к урону ",
-    "": "",
-    "": "",
+    "telepathy": "телепатия",
+    "understands": "понимает",
+    "but can't speak": "но не может говорить",
 # параметры
     "STR": "СИЛ",
     "DEX": "ЛОВ",
@@ -189,19 +190,20 @@ words_dict = {
 # типы урона
     "damage": "урон",
     "plus": "плюс",
-    "piercing": "колющего",
-    "bludgeoning": "дробящего",
-    "slashing": "рубящего",
-    "fire": "огненного",
-    "cold": "холодом",
-    "poison": "ядом",
-    "psychic": "психического",
-    "acid": "кислотного",
+    "piercing": "колющий",
+    "bludgeoning": "дробящий",
+    "slashing": "рубящий",
+    "fire": "огненный",
+    "cold": "холод",
+    "poison": "яд",
+    "psychic": "психический",
+    "acid": "кислотный",
     "": "",
     "": "",
 }
 
 lang_dict = {
+    "Languages ": "Языки ",
     "Common": "Общий",
     "Elvish": "Эльфийский",
     "Dwarwish": "Дварфийский",
@@ -213,4 +215,7 @@ lang_dict = {
     "Goblin": "Гоблинский",
     "Orc": "Орочий",
     "Undercommon": "Подземный",
+    "Telepathy": "Телепатия",
 }
+
+all_dict = {**words_dict, **lang_dict}

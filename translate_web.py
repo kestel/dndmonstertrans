@@ -1,12 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.5
 
-import re
 import sys
-import os
 # подцепляем словарь из внешнего файла
 import translate_dict as dictionary
 from translate import replacer
-from bottle import route, run, template, get, post, request
 import bottle
 
 bottle.debug(True)
@@ -14,29 +11,29 @@ bottle.debug(True)
 input_text = None
 
 
-@route('/dict')
+@bottle.route('/dict')
 def print_dict():
     dict_text = "<h3>Список языков:</h3>\n<br /><pre>"
     for elem in dictionary.lang_dict:
         dict_text = dict_text + elem + ": " + dictionary.lang_dict[elem] + "</br />\n"
     dict_text = dict_text + "</pre>\n<h3>Всё вперемешку:</h3><br /><pre>"
-    for elem in dictionary.words_dict:
+    for elem in dictionary.all_dict:
         if elem:
-            dict_text = dict_text + elem + ": " + dictionary.words_dict[elem] + "</br />\n"
+            dict_text = dict_text + elem + ": " + dictionary.all_dict[elem] + "</br />\n"
     dict_text = dict_text + "</pre>"
     return dict_text
     
     
-@post('/translate')
+@bottle.post('/translate')
 def print_translate():
-    input_text = request.forms.get('text')
+    input_text = bottle.request.forms.get('text')
     if input_text:
-        return "Вернуться на <a href='/'>главную</a>.<br />\n<pre>"+replacer(input_text, dictionary.words_dict)+"</pre>"
+        return "Вернуться на <a href='/'>главную</a>.<br />\n<pre>"+replacer(input_text, dictionary.all_dict)+"</pre>"
     else:
-        return "Вернуться на <a href='/'>главную</a>.<br />\nКажется, вы не ввели никакого текста."
+        return "Вернуться на <a href='/'>главную</a>.<br />\nКажется, вы не ввели текст."
 
 
-@route('/')
+@bottle.route('/')
 def print_index():
     return """
     <p>Посмотреть <a href="/dict">словарь</a> замены</p>
