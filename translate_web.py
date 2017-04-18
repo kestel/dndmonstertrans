@@ -24,6 +24,12 @@ def print_dict():
         weapon_dict=d.weapon_dict )
     return html
     
+
+@bottle.route('/spell_dict')
+def print_spell_dict():
+    html = bottle.template("templates/spell_dict.tpl", spell_dict=d.spell_dict)
+    return html
+    
     
 @bottle.post('/translate')
 def print_translate():

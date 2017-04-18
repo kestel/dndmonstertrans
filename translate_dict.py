@@ -137,6 +137,7 @@ creature_dict = {
     "aberration": "аберрация",
     "plant": "растение",
     "fey": "фей",
+    "celestial": "небожитель",
 }
 
 weapon_dict = {
