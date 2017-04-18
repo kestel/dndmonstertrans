@@ -42,7 +42,7 @@ spell_dict = {
 "Burning hands": "Огненные ладони",
 "Call lightning": "Призыв молнии",
 "Calm emotions": "Умиротворение",
-"Chain lightning": "Пляшущая молния",
+"Chain lightning": "Цепная молния",
 "Charm person": "Очарование личности",
 "Chill touch": "Леденящее прикосновение",
 "Chromatic orb": "Цветной шарик",
@@ -307,7 +307,7 @@ spell_dict = {
 "Speak with animals": "Разговор с животными",
 "Speak with dead": "Разговор с мёртвыми",
 "Speak with plants": "Разговор с растениями",
-"Spider climb": "Паучье лазанье",
+"Spider climb": "Паучье лазание",
 "Spike growth": "Шипы",
 "Spirit guardians": "Духовные стражи",
 "Spiritual weapon": "Божественное оружие",
@@ -361,3 +361,4 @@ spell_dict = {
 "Wrathful smite": "Гневная кара",
 "Zone of truth": "Область истины",
 }
+
