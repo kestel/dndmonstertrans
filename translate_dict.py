@@ -1,3 +1,5 @@
+#-*- coding:utf-8 -*-
+
 from spell_dict import spell_dict
 
 common_dict = {
@@ -242,6 +244,8 @@ skill_dict = {
 }
 
 item_dict = {**weapon_dict, **armor_dict}
-all_dict = {**common_dict, **lang_dict, **skill_dict, **condition_dict, **item_dict,
+
+# В all_dict не включается lang_dict т.к. тогда поедут названия монстров типа Goblin, Orc
+all_dict = {**common_dict, **skill_dict, **condition_dict, **item_dict,
     **alignment_dict, **creature_dict, **damage_dict}
 
