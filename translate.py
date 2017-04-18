@@ -24,8 +24,27 @@ def replace_lang(text, dic):
 def replace_other(line, dic):
     """Заменяем всё подряд, что не попало под другие фильтры"""
     for i, j in dic.items():
-        line = line.replace(i, j)
-        
+        line = line.replace(i, j)    
+          
+    return line
+
+
+def fix_symbols(line):
+    """Эта хрень нужна для исправления отображения разных символов"""
+    line = line.replace(b'\xc3\xa2\xc2\x88\xc2\x92'.decode('utf-8'), "-")
+    line = line.replace(b'\xc3\xa2\xc2\x80\xc2\x99'.decode('utf-8'), "'")
+    line = line.replace("’", "'")
+    
+    return line
+
+
+def replace_cr(line):
+    grep = re.search(r"Challenge\s(?P<cr>[\d\/]+)\s\((?P<xp>[\d\s,]+)\sXP\)", line)
+    if grep:
+        cr = str(grep.group('cr'))
+        xp = int(grep.group('xp').replace(" ", "").replace(",", ""))
+    line = "Опасность {cr} ({xp} опыта)".format(cr=cr, xp=xp)
+    
     return line
 
 
@@ -34,10 +53,8 @@ def replacer(text, dic):
     translated_text = ""
 
     for line in text.splitlines():
-        """Эта хрень нужна для исправления отображения разных символов"""
-        line = line.replace(b'\xc3\xa2\xc2\x88\xc2\x92'.decode('utf-8'), '-')
-        line = line.replace(b'\xc3\xa2\xc2\x80\xc2\x99'.decode('utf-8'), "'")
-
+        line = fix_symbols(line)
+        
         if "languages" in line.lower():
             line = replace_lang(line, d.lang_dict)
             
@@ -45,6 +62,9 @@ def replacer(text, dic):
             line = re.sub(r"Multiattack. ([\s\w]+) makes (\w+) melee.+", r"Мультиатака. \1 делает \2 рукопашные атаки.", line)
             line = re.sub(r"Multiattack. ([\s\w]+) makes (\w+) ranged.+", r"Мультиатака. \1 делает \2 дальнобойные атаки.", line)
             line = re.sub(r"Multiattack. ([\s\w]+) makes (\w+) attacks.+", r"Мультиатака. \1 делает \2 атаки:", line)
+            
+        if "challenge" in line.lower():
+            line = replace_cr(line)
             
         """Замена кубов по всему тексту"""
         line = re.sub(r"(\d+)d(\d+)", r"\1к\2", line)
