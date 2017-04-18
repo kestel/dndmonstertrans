@@ -13,7 +13,7 @@ input_text = None
 
 @bottle.route('/dict')
 def print_dict():
-    dict_text = "<h3>Список языков:</h3>\n<br /><pre>"
+    dict_text = "Вернуться на <a href='/'>главную</a>.<br />\n<h3>Список языков:</h3>\n<br /><pre>"
     for elem in dictionary.lang_dict:
         dict_text = dict_text + elem + ": " + dictionary.lang_dict[elem] + "</br />\n"
     dict_text = dict_text + "</pre>\n<h3>Всё вперемешку:</h3><br /><pre>"
@@ -41,7 +41,8 @@ def print_index():
     <textarea cols="80" rows="24" name="text"></textarea>
     <br />
     <input type="submit" value="Перевести текст"> <input type="reset" value="Очистить поле">
-    </form>
+    </form><br />
+    Исходные коды доступны на <a href="https://github.com/kestel/dndmonstertrans">https://github.com/kestel/dndmonstertrans</a>
     """
 
 bottle.run(host='0.0.0.0', port=sys.argv[1])
