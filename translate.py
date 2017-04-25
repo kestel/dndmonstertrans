@@ -4,10 +4,6 @@ import re
 # подцепляем словарь из внешнего файла
 import translate_dict as d
 
-input_text = None
-filename = None
-
-
 def replace_lang(text, dic):
     """Заменялка для языков"""
     langs = re.findall('(?:^Languages|(?<= ))(\w+)[, ]*', text)
@@ -39,14 +35,20 @@ def fix_symbols(line):
 
 
 def replace_cr(line):
-    grep = re.search(r"Challenge\s(?P<cr>[\d\/]+)\s\((?P<xp>[\d\s,]+)\sXP\)", line)
-    if grep:
-        cr = str(grep.group('cr'))
-        xp = int(grep.group('xp').replace(" ", "").replace(",", ""))
+    match = re.search(r"Challenge\s(?P<cr>[\d\/]+)\s\((?P<xp>[\d\s,]+)\sXP\)", line)
+    if match:
+        cr = str(match.group('cr'))
+        xp = int(match.group('xp').replace(" ", "").replace(",", ""))
     line = "Опасность {cr} ({xp} опыта)".format(cr=cr, xp=xp)
     
     return line
 
+
+def replace_multiattack(line):
+    line = line.replace("Multiattack", "Мультиатака").replace("melee attacks", "рукопашные атаки").\
+        replace("ranged attacks", "дальнобойные атаки").replace("attacks", "атаки").replace("makes", "делает")
+
+    return line
 
 def replacer(text, dic):
     """Основная функция, которая делает всю работу. В том числе запускает другие функции"""
@@ -54,16 +56,15 @@ def replacer(text, dic):
 
     for line in text.splitlines():
         line = fix_symbols(line)
+        line_lower = line.lower()
         
-        if "languages" in line.lower():
+        if "languages" in line_lower:
             line = replace_lang(line, d.lang_dict)
             
-        if "multiattack" in line.lower():
-            line = re.sub(r"Multiattack. ([\s\w]+) makes (\w+) melee.+", r"Мультиатака. \1 делает \2 рукопашные атаки.", line)
-            line = re.sub(r"Multiattack. ([\s\w]+) makes (\w+) ranged.+", r"Мультиатака. \1 делает \2 дальнобойные атаки.", line)
-            line = re.sub(r"Multiattack. ([\s\w]+) makes (\w+) attacks.+", r"Мультиатака. \1 делает \2 атаки:", line)
+        elif "multiattack" in line_lower:
+            line = replace_multiattack(line)
             
-        if "challenge" in line.lower():
+        elif "challenge" in line_lower:
             line = replace_cr(line)
             
         """Замена кубов по всему тексту"""
@@ -80,6 +81,9 @@ def replacer(text, dic):
 
 def main():
     import sys
+    input_text = None
+    filename = None
+
     try:
         filename = sys.argv[1]
     except IndexError:

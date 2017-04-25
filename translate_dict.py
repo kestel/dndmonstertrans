@@ -8,12 +8,12 @@ common_dict = {
     "Speed ": "Скорость ",
     "ft.": "фт.",
     "Saving Throws ": "Спасброски ",
-    "Special Senses ": "Чувства ",
     "fly": "полёт",
     "swim": "плавание",
     "burrow": "рытьё",
     "climb": "взбирание",
     "hover": "парение",
+    "Special Senses ": "Чувства ",
     "Senses ": "Чувства ",
     " darkvision ": " тёмное зрение ",
     "passive ": "пассивное ",
@@ -23,10 +23,6 @@ common_dict = {
     "blindsight": "слепое зрение",
     "Challenge ": "Опасность ",
     " XP)": " опыта)",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
     "Actions": "Действия",
     "ACTIONS": "Действия",
     "Multiattack.": "Мультиатака.",
@@ -37,13 +33,13 @@ common_dict = {
     "Damage Resistances ": "Сопротивление к урону ",
     "Melee Weapon Attack:": "Рукопашная атака оружием:",
     "Melee Weapon attack:": "Рукопашная атака оружием:",
-    " to hit, reach ": " к попаданию, досягаемость ",
     "Ranged Weapon Attack: ": "Дальнобойная атака оружием: ",
     "Ranged Weapon attack: ": "Дальнобойная атака оружием: ",
-    " to hit, range": " к попаданию, дистанция",
     "(Recharge": "(Перезарядка",
     "Damage Vulnerabilities ": "Уязвимость к урону ",
     "Ranged Spell Attack:": "Дальнобойная атака заклинанием:",
+    " to hit, reach ": " к попаданию, досягаемость ",
+    " to hit, range": " к попаданию, дистанция",
     "Cantrip": "Заговор",
     "at will": "неограниченно",
     "telepathy": "телепатия",
@@ -100,7 +96,6 @@ armor_dict = {
     "shield": "щит",
     "scale armor": "чешуйчатый доспех",
     "scale mail": "чешуйчатый доспех",
-    "": "",
     "natural armor": "естественный доспех",
     "with mage armor": "с магическим доспехом",
     "studded leather": "проклёпанный кожаный доспех",
@@ -122,6 +117,7 @@ creature_dict = {
     "Huge": "Огромный",
     "giant": "гигант",
     "humanoid": "гуманоид",
+    "Humanoid": "Гуманоид",
     "kobold": "кобольд",
     "fiend": "изверг",
     "monstrosity": "чудовище",
@@ -222,7 +218,6 @@ condition_dict = {
 }
 
 skill_dict = {
-    "": "",
     "Skills ": "Навыки ",
     "Acrobatics ": "Акробатика ",
     "Animal Handling ": "Уход за животными ",
@@ -244,9 +239,15 @@ skill_dict = {
     "Survival ": "Выживание ",
 }
 
+race_dict = {
+    "Aasimar": "Аасимар",
+    "Half-Elf": "Полуэльф",
+    " Elf ": " Эльф ",
+}
+
 item_dict = {**weapon_dict, **armor_dict}
 
 # В all_dict не включается lang_dict т.к. тогда поедут названия монстров типа Goblin, Orc
 all_dict = {**common_dict, **skill_dict, **condition_dict, **item_dict,
-    **alignment_dict, **creature_dict, **damage_dict}
+    **alignment_dict, **creature_dict, **damage_dict, **race_dict}
 
