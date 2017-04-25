@@ -2,11 +2,11 @@
 
 Вернуться на <a href='/'>главную</a>.<br /><br />
 
-<a href="#common">Общий термины</a>&nbsp;&nbsp;<a href="#damage">Урон</a>&nbsp;&nbsp;
+<div id="menu"><a href="#common">Общий термины</a>&nbsp;&nbsp;<a href="#damage">Урон</a>&nbsp;&nbsp;
 <a href="#alignment">Мировоззрения</a>&nbsp;&nbsp;<a href="#creature">Описания существ</a>&nbsp;&nbsp;
 <a href="#lang">Языки</a>&nbsp;&nbsp;<a href="#condition">Состояния</a>&nbsp;&nbsp;
 <a href="#skill">Скиллы (навыки)</a>&nbsp;&nbsp;<a href="#armor">Доспехи</a>&nbsp;&nbsp;
-<a href="#weapon">Оружие</a>&nbsp;&nbsp;
+<a href="#weapon">Оружие</a>&nbsp;&nbsp;</div>
 
 
 <h3 id="common">Общие термины</h3>
