@@ -2,13 +2,13 @@
 
 Вернуться на <a href='/'>главную</a>.<br /><br />
 
-<a href="#spell">Заклинания</a>
+<a href="#phb">PHB</a>
 
 
-<h3 id="spell">Заклинания</h3>
+<h3 id="phb">PHB</h3>
 <table border=0 width=500>
-%for elem in spell_dict:
-<tr><td width="250">{{elem}}</td><td>{{spell_dict[elem]}}</td></tr>
+%for elem in phb_spell:
+<tr><td width="250">{{elem}}</td><td>{{phb_spell[elem]}}</td></tr>
 %end
 </table>
 

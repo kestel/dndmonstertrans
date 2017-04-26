@@ -1,8 +1,10 @@
 #!/usr/bin/env python3.6
 
 import sys
+from os import environ
 # подцепляем словарь из внешнего файла
 import translate_dict as d
+import spell_dict as s
 from translate import replacer
 import bottle
 
@@ -27,7 +29,8 @@ def print_dict():
 
 @bottle.route('/spell_dict')
 def print_spell_dict():
-    html = bottle.template("templates/spell_dict.tpl", spell_dict=d.spell_dict)
+    html = bottle.template("templates/spell_dict.tpl",
+                           phb_spell=s.phb_spell)
     return html
     
     
@@ -42,7 +45,12 @@ def print_translate():
 
 @bottle.route('/')
 def print_index():
-    html = bottle.template("templates/index.tpl")
+    latest_commit_date = None
+    try:
+        latest_commit_date = environ["UPDATED_DATE"]
+    except:
+        latest_commit_date = "Не доступно"
+    html = bottle.template("templates/index.tpl", latest_commit_date=latest_commit_date)
     return html
 
 bottle.run(host='0.0.0.0', port=sys.argv[1])
