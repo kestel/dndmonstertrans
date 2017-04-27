@@ -365,5 +365,8 @@ phb_spell = {
     "Zone of truth": "Область истины",
 }
 
+tfyp_spell = {
+    "Crave Bolt": "Снаряд желания",
+}
 
-spell_dict = {**phb_spell}
+spell_dict = {**phb_spell, **tfyp_spell}

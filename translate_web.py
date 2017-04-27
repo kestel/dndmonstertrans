@@ -32,7 +32,8 @@ def print_dict():
 @bottle.route('/spell_dict')
 def print_spell_dict():
     html = bottle.template("templates/spell_dict.tpl",
-                           phb_spell=s.phb_spell)
+                           phb_spell=s.phb_spell,
+                           tfyp_spell=s.tfyp_spell)
     return html
 
 
