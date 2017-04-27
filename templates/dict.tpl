@@ -6,7 +6,7 @@
 <a href="#alignment">Мировоззрения</a>&nbsp;&nbsp;<a href="#creature">Описания существ</a>&nbsp;&nbsp;
 <a href="#lang">Языки</a>&nbsp;&nbsp;<a href="#condition">Состояния</a>&nbsp;&nbsp;
 <a href="#skill">Скиллы (навыки)</a>&nbsp;&nbsp;<a href="#armor">Доспехи</a>&nbsp;&nbsp;
-<a href="#weapon">Оружие</a>&nbsp;&nbsp;</div>
+<a href="#weapon">Оружие</a>&nbsp;&nbsp;<a href="#race">Расы</a>&nbsp;&nbsp;<a href="#abilities">Способности</a>&nbsp;&nbsp;</div>
 
 
 <h3 id="common">Общие термины</h3>
@@ -69,6 +69,20 @@
 <table border=0 width=500>
 %for elem in weapon_dict:
 <tr><td width="250">{{elem}}</td><td>{{weapon_dict[elem]}}</td></tr>
+%end
+</table>
+
+<h3 id="race">Расы</h3>
+<table border=0 width=500>
+%for elem in race_dict:
+<tr><td width="250">{{elem}}</td><td>{{race_dict[elem]}}</td></tr>
+%end
+</table>
+
+<h3 id="abilities">Способности</h3>
+<table border=0 width=500>
+%for elem in abilities_dict:
+<tr><td width="250">{{elem}}</td><td>{{abilities_dict[elem]}}</td></tr>
 %end
 </table>
 

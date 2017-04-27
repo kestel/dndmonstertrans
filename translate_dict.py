@@ -28,9 +28,6 @@ common_dict = {
     "Multiattack.": "Мультиатака.",
     "one target": "одна цель",
     "Hit: ": "Попадание: ",
-    "Magic Resistance. ": "Сопротивление магии. ",
-    "Damage Immunities ": "Иммунитет к урону ",
-    "Damage Resistances ": "Сопротивление к урону ",
     "Melee Weapon Attack:": "Рукопашная атака оружием:",
     "Melee Weapon attack:": "Рукопашная атака оружием:",
     "Ranged Weapon Attack: ": "Дальнобойная атака оружием: ",
@@ -40,6 +37,7 @@ common_dict = {
     "Ranged Spell Attack:": "Дальнобойная атака заклинанием:",
     " to hit, reach ": " к попаданию, досягаемость ",
     " to hit, range": " к попаданию, дистанция",
+    "Cantrips": "Заговоры",
     "Cantrip": "Заговор",
     "at will": "неограниченно",
     "telepathy": "телепатия",
@@ -58,22 +56,29 @@ common_dict = {
     "Int ": "Инт ",
     "Wis ": "Мдр ",
     "Cha ": "Хар ",
+    "Strength": "Сила",
+    "Dexterity": "Ловкость",
+    "Constitution": "Телосложение",
+    "Intelligence": "Интеллект",
+    "Wisdom": "Мудрость",
+    "Charisma": "Харизма",
 }
 
 damage_dict = {
 # типы урона
-    "damage": "урон",
-    "plus": "плюс",
-    "piercing": "колющий",
-    "bludgeoning": "дробящий",
-    "slashing": "рубящий",
-    "fire": "огненный",
-    "cold": "холод",
-    "poison": "яд",
-    "psychic": "психический",
-    "acid": "кислотный",
-    "lightning": "молния",
-    "necrotic": "некротический",
+    " lightning damage ": " урон молнией ",
+    " damage ": " урон ",
+    " plus ": " плюс ",
+    " piercing ": " колющий ",
+    " bludgeoning ": " дробящий ",
+    " slashing ": " рубящий ",
+    " fire ": " огненный ",
+    " cold ": " холод ",
+    " poison ": " яд ",
+    " psychic ": " психический ",
+    " acid ": " кислотный ",
+    " lightning ": " молния ",
+    " necrotic ": " некротический ",
 }
 
 alignment_dict = {
@@ -115,6 +120,7 @@ creature_dict = {
     "Medium": "Средний",
     "Large ": "Большой ",
     "Huge": "Огромный",
+    "Gargantuan": "Громадный",
     "giant": "гигант",
     "humanoid": "гуманоид",
     "Humanoid": "Гуманоид",
@@ -134,6 +140,9 @@ creature_dict = {
     "plant": "растение",
     "fey": "фей",
     "celestial": "небожитель",
+    "Wight": "Умертвие",
+    "Ghast": "Вурдалак",
+    "Ghoul": "Упырь",
 }
 
 weapon_dict = {
@@ -245,9 +254,50 @@ race_dict = {
     " Elf ": " Эльф ",
 }
 
+abilities_dict = {
+    "can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check":
+        "может карабкаться по сложным поверхностям, включая вверх ногами по потолку, без необходимости проходить какие-то проверки",
+    "Sunlight Sensitivity": "Чувствительность к солнечном свету",
+    "While in sunlight,": "Находясь на солнечном свету,",
+    "has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.":
+        "получает помеху на броски атак и на проверки Мудрости (Восприятия) основанные на зрении.",
+    "Undead Fortitude": "Стойкость Нежити",
+    "If damage reduces": "Если урон понижает хиты",
+    "it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success,":
+        "он должен пройти спасбросок Телосложения против Сл 5 + полученный урон, если только урон не от сияния или критического попадания. При успехе хиты",
+    "drops to 1 hit point instead": "вместо этого снижаются до 1",
+    "Undead Nature": "Природа нежити",
+    "doesn't require air. food, drink, or sleep": "не нужно дышать, есть, пить или спать",
+    "Amphibious": "Амфибия",
+    "can breathe air and water": "может дышать воздухом и под водой",
+    "Magic Resistance. ": "Сопротивление магии. ",
+    "Damage Immunities ": "Иммунитет к урону ",
+    "Damage Resistances ": "Сопротивление к урону ",
+    "has advantage on saving throws against spells and other magical effects": "получает преимущество на спасброски против заклинаний и прочих магических эффектов",
+    "Innate Spellcasting": "Врождённое колдовство",
+    "It can innately cast the following spells, requiring no verbal or material components": "Он может накладывать следующие заклинания, не нуждаясь ни в каких компонентах",
+    "spell save DC": "Сл спасброска от заклинания",
+    "innate spellcasting ability is": "Базовой характеристикой <ИМЯ_СЮДА> является",
+    "1 slot": "1 ячейка",
+    "slots": "ячейки",
+    "level": "уровень",
+    "1st": "1-й",
+    "2nd": "2-й",
+    "3rd": "3-й",
+    "4th": "4-й",
+    "5th": "5-й",
+    "6th": "6-й",
+    "7th": "7-й",
+    "8th": "8-й",
+    "9th": "9-й",
+    "": "",
+    "": "",
+    "The target must succeed on a DC": "Цель должна преуспеть в спасброске <ПАРАМЕТР> со Сл",
+    "saving throw or ": "иначе ",
+}
+
 item_dict = {**weapon_dict, **armor_dict}
 
 # В all_dict не включается lang_dict т.к. тогда поедут названия монстров типа Goblin, Orc
-all_dict = {**common_dict, **skill_dict, **condition_dict, **item_dict,
+all_dict = {**abilities_dict, **spell_dict, **common_dict, **skill_dict, **condition_dict, **item_dict,
     **alignment_dict, **creature_dict, **damage_dict, **race_dict}
-
