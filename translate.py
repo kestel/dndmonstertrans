@@ -39,6 +39,7 @@ def fix_symbols(line):
     line = line.replace(b'\xc3\xa2\xc2\x88\xc2\x92'.decode('utf-8'), "-").\
         replace(b'\xc3\xa2\xc2\x80\xc2\x99'.decode('utf-8'), "'").\
         replace('Â¬', '').\
+        replace('¬', '').\
         replace("’", "'")
     
     return line
