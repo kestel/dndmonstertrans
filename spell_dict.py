@@ -1,3 +1,5 @@
+#-*- coding:utf-8 -*-
+
 phb_spell = {
     "Acid splash": "Брызги кислоты",
     "Aid": "Подмога",
@@ -308,6 +310,7 @@ phb_spell = {
     "Speak with dead": "Разговор с мёртвыми",
     "Speak with plants": "Разговор с растениями",
     "Spider climb": "Паучье лазание",
+    "Spider Climb": "Паучье лазание",
     "Spike growth": "Шипы",
     "Spirit guardians": "Духовные стражи",
     "Spiritual weapon": "Божественное оружие",
