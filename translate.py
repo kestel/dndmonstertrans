@@ -71,8 +71,8 @@ def replace_multiattack(line):
 def translate_spell(line):
     line = line.replace(";", ",").replace(":", ",")
     spell_list = line.split(",")
-    newline = ""
-    for spell in spell_list:
+    newline = "{}:".format(spell_list[0])
+    for spell in spell_list[1:]:
         spell_ru = replace_other_lower(spell.strip(), d.spell_dict)
         newline = "{0} {1} [{2}], ".format(newline.strip(), spell_ru.strip(), spell.strip())
 
@@ -96,7 +96,7 @@ def replacer(text, dic):
         elif "challenge" in line_lower:
             line = replace_cr(line)
 
-        elif re.search("Cantrip|[\d\w\s]{4}level", line, re.IGNORECASE):
+        elif re.search("Cantrip|[\d\w\s]{4}level|\d\/day\seach|At\swill", line, re.IGNORECASE):
             line = translate_spell(line)
 
         elif "pack tactics" in line_lower:
