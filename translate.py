@@ -7,6 +7,9 @@ import translate_dict as d
 
 def replace_lang(text, dic):
     """Заменялка для языков"""
+    text = text.replace("Languages:", "Languages")
+    if "---" in text:
+        return text
     langs = re.findall('(?:^Languages|(?<= ))(\w+)[, ]*', text)
     langru = "Языки "
     for lang in langs:
@@ -27,7 +30,10 @@ def replace_other(line, dic):
 
 
 def replace_other_lower(line, dic):
-    """Заменяем всё подряд, что не попало под другие фильтры"""
+    """
+    Заменяем всё подряд, что не попало под другие фильтры но в нижнем регистре
+    Используется в замене заклинаний
+    """
     for i, j in dic.items():
         line = line.replace(i.lower(), j.lower())
 
@@ -46,7 +52,7 @@ def fix_symbols(line):
 
 
 def replace_cr(line):
-    match = re.search(r"Challenge\s(?P<cr>[\d\/]+)\s\((?P<xp>[\d\s,]+)\sXP\)", line)
+    match = re.search(r"Challenge[\s:]+(?P<cr>[\d\/]+)\s\((?P<xp>[\d\s,]+)\sXP\)", line)
     if match:
         cr = str(match.group('cr'))
         xp = int(match.group('xp').replace(" ", "").replace(",", ""))
@@ -83,24 +89,27 @@ def replacer(text, dic):
         
         if "languages" in line_lower:
             line = replace_lang(line, d.lang_dict)
-            
+
         elif "multiattack" in line_lower:
             line = replace_multiattack(line)
             
         elif "challenge" in line_lower:
             line = replace_cr(line)
 
-        elif ("at will" or "cantrip" or "1st level") in line_lower:
+        elif re.search("Cantrip|[\d\w\s]{4}level", line, re.IGNORECASE):
             line = translate_spell(line)
 
-        elif ("2nd level" or "3rd level" or "4th level" or "5th level") in line_lower:
-            line = translate_spell(line)
+        elif "pack tactics" in line_lower:
+            line = re.sub(r"Pack Tactics. ([\s\w]+) has advantage on an attack roll against a creature if at least one of the (\w+).+",
+                          r"Тактика стаи. \1 совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник \2",
+                          line)
 
-        elif ("6th level" or "7th level" or "8th level" or "9th level") in line_lower:
-            line = translate_spell(line)
-
-        else:
-            print(line_lower)
+        elif "keen smell" in line_lower:
+            line = re.sub(r"Keen Smell. ([\s\w]+) has advantage on Wisdom \(Perception\) checks that rely on smell.+",
+                          r"Тонкий нюх. \1 совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние",
+                          line)
+        # else:
+        #    print(line_lower)
 
         """Замена всего оставшегося"""
         line = replace_other(line, dic)
