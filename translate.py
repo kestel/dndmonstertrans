@@ -108,6 +108,36 @@ def replacer(text, dic):
             line = re.sub(r"Keen Smell. ([\s\w]+) has advantage on Wisdom \(Perception\) checks that rely on smell.+",
                           r"Тонкий нюх. \1 совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние",
                           line)
+
+        elif "keen sight and smell" in line_lower:
+            line = re.sub(r"Keen Sight and Smell. ([\s\w]+) has advantage on Wisdom \(Perception\) checks that rely on sight or smell.+",
+                          r"Острый слух и тонкий нюх. \1 совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние",
+                          line)
+
+        elif "innate spellcasting" in line_lower:
+            line = re.sub(r"Innate Spellcasting. ([\s\w\']+) innate spellcasting ability is ([\w]+). It can innately cast the following spells, requiring no material components:",
+                          r"Врождённое колдовство. Базовой характеристикой \1 является \2. Он может накладывать следующие заклинания, не нуждаясь ни в каких компонентах:",
+                          line)
+
+        elif "spellcasting" in line_lower:
+            line = re.sub(r"Spellcasting. ([\s\w]+) is a.? ([\d]+)[\w]+-level spellcaster.",
+                          r"Колдовство. \1 является заклинателем \2 уровня.",
+                          line)
+            line = re.sub(r"Its spellcasting ability is (\w+) \(spell save(?:\sDC|)\s(\d+), ([\d+]+) to hit with spell attacks\).",
+                          r"Его способность к заклинаниям основана на \1 (Сл спасброска от заклинаний \2, \3 к атакам заклинаниями).",
+                          line)
+            line = re.sub(r"([\s\w]+) has the following (?:(\w+)\s|)spells prepared",
+                          r"\1 обладает следующими заготовленными заклинаниями \2",
+                          line)
+        elif "change shape" in line_lower:
+            line = re.sub(r"Change Shape. ([\s\w]+) magically polymorphs into a ([\s\w]+) it has seen, or back into its true form.",
+                          r"Смена формы. \1 магическим образом превращается в \2, которого видел, или принимает свой истинный облик.",
+                          line)
+        elif ("target must make" and "saving throw") in line_lower:
+            line = re.sub(r"The target must make a DC (\d+) (\w+) saving throw",
+                          r"Цель должна совершить спасбросок \2 со Сл \1",
+                          line)
+
         # else:
         #    print(line_lower)
 
