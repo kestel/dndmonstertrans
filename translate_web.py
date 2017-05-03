@@ -42,9 +42,11 @@ def print_translate():
     input_text = None
     input_text = bottle.request.forms.text
     if input_text:
-        return "Вернуться на <a href='/'>главную</a>.<br />\n<pre>" + replacer(input_text, d.all_dict) + "</pre>"
+        text = replacer(input_text, d.all_dict)
     else:
-        return "Вернуться на <a href='/'>главную</a>.<br />\nКажется, вы не ввели текст."
+        text = "Кажется, вы не ввели текст."
+    html = bottle.template("templates/translate.tpl", text=text)
+    return html
 
 
 @bottle.route('/')
