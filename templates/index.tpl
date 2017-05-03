@@ -8,6 +8,8 @@
 <input type="submit" style="height:50px; width:500px" value="Перевести текст"> <input type="reset" style="height:50px; width:150px" value="Очистить поле">
 </form><br />
 
+Предложить вариант перевода можно через <a href="https://goo.gl/forms/MaaIYAuvFfIT4eQL2">форму</a>.<br /><br />
+
 Исходные коды доступны на <a href="https://github.com/kestel/dndmonstertrans">https://github.com/kestel/dndmonstertrans</a><br /><br />
 
 Последняя дата обновления: {{latest_commit_date}}
