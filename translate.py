@@ -99,43 +99,59 @@ def replacer(text, dic):
         elif re.search("Cantrip|[\d\w\s]{4}level|\d\/day\seach|At\swill", line, re.IGNORECASE):
             line = translate_spell(line)
 
-        elif "pack tactics" in line_lower:
-            line = re.sub(r"Pack Tactics. ([\s\w]+) has advantage on an attack roll against a creature if at least one of the (\w+).+",
-                          r"Тактика стаи. \1 совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник \2",
-                          line)
-
-        elif "keen smell" in line_lower:
-            line = re.sub(r"Keen Smell. ([\s\w]+) has advantage on Wisdom \(Perception\) checks that rely on smell.+",
-                          r"Тонкий нюх. \1 совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние",
-                          line)
-
-        elif "keen sight and smell" in line_lower:
-            line = re.sub(r"Keen Sight and Smell. ([\s\w]+) has advantage on Wisdom \(Perception\) checks that rely on sight or smell.+",
-                          r"Острый слух и тонкий нюх. \1 совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние",
-                          line)
-
         elif "innate spellcasting" in line_lower:
-            line = re.sub(r"Innate Spellcasting. ([\s\w\']+) innate spellcasting ability is ([\w]+). It can innately cast the following spells, requiring no material components:",
-                          r"Врождённое колдовство. Базовой характеристикой \1 является \2. Он может накладывать следующие заклинания, не нуждаясь ни в каких компонентах:",
-                          line)
+            match = re.search(r"Innate Spellcasting. (?P<name>[\s\w\']+) innate spellcasting ability is (?P<abil>[\w]+)(?:[\s\(\w]+DC\s+(?P<dc>\d+)\)|)\.\s+(?:[\w\s]+) can innately cast the following spells, requiring (?P<comp>[\w\s]+) components", line)
+            if match:
+                name = str(match.group("name"))
+                abil = str(match.group("abil"))
+                if match.group('dc'):
+                    dc = int(match.group("dc"))
+                else:
+                    dc = None
+                comp = str(match.group("comp"))
+                if dc:
+                    save = " (спас бросок Сл {dc})".format(dc=dc)
+                else:
+                    save = ""
+                line = "Врождённое колдовство. Базовой характеристикой {name} является {abil}{save}. Он может накладывать следующие заклинания, не нуждаясь {comp} компонентах"\
+                    .format(name=name, abil=abil, save=save, comp=comp)
 
         elif "spellcasting" in line_lower:
             line = re.sub(r"Spellcasting. ([\s\w]+) is a.? ([\d]+)[\w]+-level spellcaster.",
                           r"Колдовство. \1 является заклинателем \2 уровня.",
                           line)
-            line = re.sub(r"Its spellcasting ability is (\w+) \(spell save(?:\sDC|)\s(\d+), ([\d+]+) to hit with spell attacks\).",
-                          r"Его способность к заклинаниям основана на \1 (Сл спасброска от заклинаний \2, \3 к атакам заклинаниями).",
+            line = re.sub(r"(?:[\s\w]+)spellcasting ability is (\w+) \(spell save(?:\sDC|)\s(\d+), ([\d+]+) to hit with spell attacks\).",
+                          r" Его способность к заклинаниям основана на \1 (Сл спасброска от заклинаний \2, \3 к атакам заклинаниями).",
                           line)
             line = re.sub(r"([\s\w]+) has the following (?:(\w+)\s|)spells prepared",
                           r"\1 обладает следующими заготовленными заклинаниями \2",
                           line)
-        elif "change shape" in line_lower:
-            line = re.sub(r"Change Shape. ([\s\w]+) magically polymorphs into a ([\s\w]+) it has seen, or back into its true form.",
+
+        # elif "pack tactics" in line_lower:
+        line = re.sub(r"Pack Tactics. ([\s\w]+) has advantage on an attack roll against a creature if at least one of the (\w+).+",
+                          r"Тактика стаи. \1 совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник \2",
+                          line)
+
+        # elif "keen smell" in line_lower:
+        line = re.sub(r"Keen Smell. ([\s\w]+) has advantage on Wisdom \(Perception\) checks that rely on smell.+",
+                          r"Тонкий нюх. \1 совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние",
+                          line)
+
+        # elif "keen sight and smell" in line_lower:
+        line = re.sub(r"Keen Sight and Smell. ([\s\w]+) has advantage on Wisdom \(Perception\) checks that rely on sight or smell.+",
+                          r"Острый слух и тонкий нюх. \1 совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на слух и обоняние",
+                          line)
+
+        line = re.sub(r"Change Shape. ([\s\w]+) magically polymorphs into a ([\s\w]+) it has seen, or back into its true form.",
                           r"Смена формы. \1 магическим образом превращается в \2, которого видел, или принимает свой истинный облик.",
                           line)
-        elif ("target must make" and "saving throw") in line_lower:
-            line = re.sub(r"The target must make a DC (\d+) (\w+) saving throw",
+
+        line = re.sub(r"The target must make a DC (\d+) (\w+) saving throw",
                           r"Цель должна совершить спасбросок \2 со Сл \1",
+                          line)
+
+        line = re.sub(r"If the target is a creature, it must succeed on a DC (\d+) Strength saving throw or be knocked prone",
+                          r"Если цель — существо, она должна преуспеть в спасброске Силы со Сл \1, иначе будет сбита с ног",
                           line)
 
         # else:
