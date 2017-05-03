@@ -76,6 +76,7 @@ damage_dict = {
     " lightning damage": " урон молнией",
     " damage ": " урон ",
     " damage.": " урон.",
+    " damage,": " урон,",
     " plus ": " плюс ",
     " piercing": " колющий",
     " bludgeoning": " дробящий",
@@ -107,7 +108,7 @@ alignment_dict = {
 }
 
 armor_dict = {
-    "shield": "щит",
+    " shield": " щит",
     "scale armor": "чешуйчатый доспех",
     "scale mail": "чешуйчатый доспех",
     "natural armor": "естественный доспех",
@@ -213,6 +214,7 @@ weapon_dict = {
     "Tentacles": "Щупальца",
     "Hooves": "Копыта",
     "Stinger": "Жало",
+    "Swallow": "Проглатывание",
 }
 
 lang_dict = {
@@ -309,7 +311,7 @@ abilities_dict = {
     "Undead Nature": "Природа нежити",
     "doesn't require air. food, drink, or sleep": "не нужно дышать, есть, пить или спать",
     "Amphibious": "Амфибия",
-    "can breathe air and water": "может дышать воздухом и под водой",
+    "can breathe air and water": "может дышать и воздухом и под водой",
     "Magic Resistance. ": "Сопротивление магии. ",
     "Damage Immunities ": "Иммунитет к урону ",
     "Damage Resistances ": "Сопротивление к урону ",
@@ -343,6 +345,23 @@ abilities_dict = {
     "Lair Actions": "Действия логова",
     "Trampling Charge": "Растаптывающий рывок",
     "Petrifying Breath": "Окаменяющее дыхание",
+    "one creature": "одно существо",
+    "Cunning Action": "Хитрое действие",
+    "Duergar Resilience": "Дуэргарская устойчивость",
+    "Enlarge": "Увеличение",
+    "Water Breathing": "Подводное дыхание",
+    "can breathe only underwater": "может дышать только под водой",
+    "Turn Immunity": "Иммунитет к изгнанию",
+    "is immune to effects that turn undead": "обладает иммунитетом к эффектам, изгоняющим нежить",
+    "escape DC": "Сл высвобождения",
+    "Until this grapple ends, the target is": "Пока цель схвачена, она",
+    "another target": "другую цель",
+    "and the target is grappled": "и цель Схвачена",
+    "(self only)": "(только на себя)",
+    "": "",
+    "": "",
+    "": "",
+    "": "",
     "": "",
 }
 
