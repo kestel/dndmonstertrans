@@ -73,7 +73,7 @@ def translate_spell(line):
     spell_list = line.split(",")
     newline = "{}:".format(spell_list[0])
     for spell in spell_list[1:]:
-        spell_ru = replace_other_lower(spell.strip(), d.spell_dict)
+        spell_ru = replace_other_lower(spell.replace("'", "").strip(), d.spell_dict)
         newline = "{0} {1} [{2}], ".format(newline.strip(), spell_ru.strip(), spell.strip())
 
     return newline[:-2]
@@ -128,12 +128,12 @@ def replacer(text, dic):
                           line)
 
         # elif "pack tactics" in line_lower:
-        line = re.sub(r"Pack Tactics. ([\s\w]+) has advantage on an attack roll against a creature if at least one of the (\w+).+",
+        line = re.sub(r"Pack Tactics. ([\s\w]+) has advantage on an attack roll against a creature if at least one of ([\s\w]+) allies.+",
                           r"Тактика стаи. \1 совершает с преимуществом броски атаки по существу, если в пределах 5 футов от этого существа находится как минимум один дееспособный союзник \2",
                           line)
 
         # elif "keen smell" in line_lower:
-        line = re.sub(r"Keen Smell. ([\s\w]+) has advantage on Wisdom \(Perception\) checks that rely on smell.+",
+        line = re.sub(r"Keen Smell. ([\s\w]+) has advantage on Wisdom \(Perception\) checks that rely on smell",
                           r"Тонкий нюх. \1 совершает с преимуществом проверки Мудрости (Внимательность), полагающиеся на обоняние",
                           line)
 
