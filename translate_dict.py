@@ -394,10 +394,20 @@ name_dict = {
     "": "",
     "": "",
     "": "",
+    "Abjuration": "Ограждение",
+    "Conjuration": "Вызов",
+    "Divination": "Прорицание",
+    "Enchantment": "Очарование",
+    "Evocation": "Воплощение",
+    "Illusion": "Иллюзия",
+    "Necromancy": "Некромантия",
+    "Transmutation": "Преобразование",
     "": "",
     "": "",
     "": "",
-    "barbarin": "варвар",
+    "": "",
+    "": "",
+    "barbarian": "варвар",
     "bard": "бард",
     "cleric": "жрец",
     "druid": "друид",
@@ -410,6 +420,8 @@ name_dict = {
     "warlock": "колдун",
     "wizard": "волшебник",
 }
+
+
 
 item_dict = {**weapon_dict, **armor_dict}
 
