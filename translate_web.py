@@ -25,7 +25,8 @@ def print_dict():
                            armor_dict=d.armor_dict,
                            weapon_dict=d.weapon_dict,
                            race_dict=d.race_dict,
-                           abilities_dict=d.abilities_dict)
+                           abilities_dict=d.abilities_dict,
+                           name_dict=d.name_dict)
     return html
 
 
