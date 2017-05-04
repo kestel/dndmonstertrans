@@ -89,6 +89,7 @@ damage_dict = {
     " lightning": " молния",
     " necrotic": " некротический",
     " radiant": " излучение",
+    " force": "силовым полем",
 }
 
 alignment_dict = {
@@ -215,6 +216,8 @@ weapon_dict = {
     "Hooves": "Копыта",
     "Stinger": "Жало",
     "Swallow": "Проглатывание",
+    "Fling": "Бросок",
+    "Thorn": "Шип",
 }
 
 lang_dict = {
@@ -300,6 +303,7 @@ abilities_dict = {
     "can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check":
         "может карабкаться по сложным поверхностям, включая вверх ногами по потолку, без необходимости проходить какие-то проверки",
     "Sunlight Sensitivity": "Чувствительность к солнечном свету",
+    "Sunlight Hypersensitivity": "Гиперчувствительность к солнечном свету",
     "While in sunlight,": "Находясь на солнечном свету,",
     "has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.":
         "получает помеху на броски атак и на проверки Мудрости (Восприятия) основанные на зрении.",
@@ -309,7 +313,10 @@ abilities_dict = {
         "он должен пройти спасбросок Телосложения против Сл 5 + полученный урон, если только урон не от сияния или критического попадания. При успехе хиты",
     "drops to 1 hit point instead": "вместо этого снижаются до 1",
     "Undead Nature": "Природа нежити",
-    "doesn't require air. food, drink, or sleep": "не нужно дышать, есть, пить или спать",
+    "Ooze Nature": "Природа слизи",
+    "doesn't require air food, drink, or sleep": "не нужно дышать, есть, пить или спать",
+    "doesn't require air or sleep": "не нужно дышать или спать",
+    "doesn't require sleep": "не нужно спать",
     "Amphibious": "Амфибия",
     "can breathe air and water": "может дышать и воздухом и под водой",
     "Magic Resistance. ": "Сопротивление магии. ",
@@ -358,15 +365,54 @@ abilities_dict = {
     "another target": "другую цель",
     "and the target is grappled": "и цель Схвачена",
     "(self only)": "(только на себя)",
+    "Standing Leap": "Прыжок с места",
+    "Life Drain": "Вытягивание жизни",
+    "Evasion": "Уклонение",
+    "Sneak Attack": "Скрытая атака",
+    "Assassinate": "Убийство",
+    "Turn Resistance": "Сопротивление изгнанию",
+    "has advantage on saving throws against any effect that turns undead": "совершает с преимуществом спасброски от всех эффектов, изгоняющих нежить",
+    "Slam": "Размашистый удар",
+    "False Appearance": "Обманчивая внешность",
+    "Speak with Animals": "Разговор с животными",
+    "Pseudopod": "Ложноножка",
+    "if used with two hands": "при ударе двумя руками",
+    "Amorphous Form": "Аморфная форма",
+    "Corrode Metal": "Коррозия металла",
+    "Killer Response": "Реакция убийцы",
+    "": "",
+    "": "",
+    "": "",
+}
+
+name_dict = {
+    "Wight": "Умертвие",
+    "Spy": "Шпион",
+    "Assassin": "Наёмный убийца",
+    "Tecuziztecatl": "Текузизтекатль",
+    "Sharwyn": "Шарвин",
     "": "",
     "": "",
     "": "",
     "": "",
     "": "",
+    "": "",
+    "barbarin": "варвар",
+    "bard": "бард",
+    "cleric": "жрец",
+    "druid": "друид",
+    "fighter": "воин",
+    "monk": "монах",
+    "paladin": "паладиин",
+    "ranger": "следопыт",
+    "rogue": "плут",
+    "sorcerer": "чародей",
+    "warlock": "колдун",
+    "wizard": "волшебник",
 }
 
 item_dict = {**weapon_dict, **armor_dict}
 
 # В all_dict не включается lang_dict т.к. тогда поедут названия монстров типа Goblin, Orc
 all_dict = {**abilities_dict, **spell_dict, **common_dict, **skill_dict, **condition_dict, **item_dict,
-    **alignment_dict, **creature_dict, **damage_dict, **race_dict}
+    **alignment_dict, **creature_dict, **damage_dict, **race_dict, **name_dict}
