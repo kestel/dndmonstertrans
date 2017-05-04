@@ -34,6 +34,8 @@ def print_dict():
 def print_spell_dict():
     html = bottle.template("templates/spell_dict.tpl",
                            phb_spell=s.phb_spell,
+                           ee_spell=s.ee_spell,
+                           scag_spell=s.scag_spell,
                            tfyp_spell=s.tfyp_spell)
     return html
 

@@ -372,8 +372,68 @@ phb_spell = {
     "Zone of truth": "Область истины",
 }
 
-tfyp_spell = {
-    "Crave Bolt": "Снаряд желания",
+ee_spell = {
+    "Abi-Dalzim's Horrid Wilting": "Ужасное увядание Аби-Далзима",
+    "Abi-Dalzims Horrid Wilting": "Ужасное увядание Аби-Далзима",
+    "Absorb Elements": "Поглощение стихий",
+    "Aganazzar's Scorcher": "Пекло Аганаззара",
+    "Aganazzars Scorcher": "Пекло Аганаззара",
+    "Beast Bond": "Звериные узы",
+    "Bones of the Earth": "Кости земли",
+    "Catapult": "Катапульта",
+    "Control Flames": "Власть над огнём",
+    "Control Winds": "Власть над ветрами",
+    "Create Bonfire": "Сотворение костра",
+    "Dust Devil": "Пылевой вихрь",
+    "Earth Tremor": "Дрожь земли",
+    "Earthbind": "Узы земли",
+    "Elemental Bane": "Проклятье стихий",
+    "Erupting Earth": "Извержение земли",
+    "Flame Arrows": "Пылающие стрелы",
+    "Frostbite": "Обморожение",
+    "Gust": "Шквал",
+    "Ice Knife": "Ледяной кинжал",
+    "Immolation": "Испепеление",
+    "Investiture of Flame": "Облачение огня",
+    "Investiture of Ice": "Облачение льда",
+    "Investiture of Stone": "Облачение камня",
+    "Investiture of Wind": "Облачение ветра",
+    "Maelstrom": "Водоворот",
+    "Magic Stone": "Волшебный камень",
+    "Maximilian's Earthen Grasp": "Земляная хватка Максимилиана",
+    "Maximilians Earthen Grasp": "Земляная хватка Максимилиана",
+    "Melf's Minute Meteors": "Мельфовы маленькие метеоры",
+    "Melfs Minute Meteors": "Мельфовы маленькие метеоры",
+    "Mold Earth": "Лепка земли",
+    "Primordial Ward": "Первородный страж",
+    "Pyrotechnics": "Пиротехника",
+    "Shape Water": "Формование воды",
+    "Skywrite": "Небесные письмена",
+    "Snilloc's Snowball Swarm": "Снежный шквал Сниллока",
+    "Snillocs Snowball Swarm": "Снежный шквал Сниллока",
+    "Storm Sphere": "Сфера бури",
+    "Thunderclap": "Раскат грома",
+    "Tidal Wave": "Приливная волна",
+    "Transmute Rock": "Преобразование камня",
+    "Vitriolic Sphere": "Едкий шар",
+    "Wall of Sand": "Песчаная стена",
+    "Wall of Water": "Водяная стена",
+    "Warding Wind": "Защитный ветер",
+    "Watery Sphere": "Водяная сфера",
+    "Whirlwind": "Смерч",
 }
 
-spell_dict = {**phb_spell, **tfyp_spell}
+scag_spell = {
+    "Booming Blade": "Громовый Клинок",
+    "Green-Flame Blade": "Клинок Зеленого Пламени",
+    "Lightning Lure": "Лассо Молнии",
+    "Sword Burst": "Вспышка Мечей",
+}
+
+tfyp_spell = {
+    "Crave Bolt": "Снаряд желания",
+    "": "",
+}
+
+spell_dict = {**phb_spell, **ee_spell, **scag_spell, **tfyp_spell}
+
