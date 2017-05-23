@@ -3,7 +3,7 @@
 
 import re
 # подцепляем словарь из внешнего файла
-import translate_dict as d
+import dicts.dicts as d
 
 def replace_lang(text, dic):
     """Заменялка для языков"""

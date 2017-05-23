@@ -4,8 +4,8 @@
 import sys
 from os import environ
 # подцепляем словарь из внешнего файла
-import translate_dict as d
-import spell_dict as s
+import dicts.dicts as d
+import dicts.spells as s
 from translate import replacer
 import bottle
 
