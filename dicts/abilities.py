@@ -20,7 +20,8 @@ abilities_dict = {
     "doesn't require sleep": "не нужно спать",
     "Amphibious": "Амфибия",
     "can breathe air and water": "может дышать и воздухом и под водой",
-    "Magic Resistance. ": "Сопротивление магии. ",
+    "Magic Resistance": "Сопротивление магии",
+    "Magic Weapons": "Магическое оружие",
     "Damage Immunities ": "Иммунитет к урону ",
     "Damage Resistances ": "Сопротивление к урону ",
     "Damage Immunities: ": "Иммунитет к урону ",
@@ -101,7 +102,7 @@ abilities_dict = {
     "Rejuvenation": "Восстановление",
     "Paralyzing Touch": "Парализующее касание",
     "Benign Transposition": "Добровольная перестановка",
-    "": "",
+    "Charge": "Рывок",
     "": "",
     "": "",
 }
