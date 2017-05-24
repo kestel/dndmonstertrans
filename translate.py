@@ -5,19 +5,21 @@ import re
 # подцепляем словарь из внешнего файла
 import dicts.dicts as d
 
+
 def replace_lang(text, dic):
     """Заменялка для языков"""
     text = text.replace("Languages:", "Languages")
     if "---" in text:
-        return text
-    langs = re.findall('(?:^Languages|(?<= ))(\w+)[, ]*', text)
+        return "Языки ---"
     langru = "Языки "
+    langs = text.replace("Languages ", "").split(",")
     for lang in langs:
+        lang = lang.strip()
         try:
             langru = langru + dic[lang] + ", "
         except:
-            return text
-            
+            langru = langru + lang.capitalize() + ", "
+
     return langru[:-2]
 
 
