@@ -52,6 +52,7 @@ weapon_dict = {
     "claw": "когти",
     "Gore": "Бодание",
     "Tail": "Хвост",
+    "Horn": "Рог",
     "Tentacles": "Щупальца",
     "Hooves": "Копыта",
     "Stinger": "Жало",
@@ -59,4 +60,20 @@ weapon_dict = {
     "Fling": "Бросок",
     "Thorn": "Шип",
     "Tentacle": "Щупальца",
+}
+
+armor_dict = {
+    " shield": " щит",
+    "scale armor": "чешуйчатый доспех",
+    "scale mail": "чешуйчатый доспех",
+    "natural armor": "естественный доспех",
+    "with mage armor": "с магическим доспехом",
+    "studded leather": "проклёпанный кожаный доспех",
+    "Barkskin trait": "дубовая кора",
+    "chain mail": "кольчуга",
+    "chain shirt": "кольчужная рубаха",
+    "ring mail": "колечный",
+    "hide armor": "шкурный",
+    "plate": "латы",
+    "leather armor": "кожаный доспех",
 }

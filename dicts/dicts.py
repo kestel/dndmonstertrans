@@ -1,7 +1,7 @@
 #-*- coding:utf-8 -*-
 
 from dicts.spells import spell_dict
-from dicts.weapons import weapon_dict
+from dicts.items import weapon_dict, armor_dict
 from dicts.creatures import  creature_dict
 from dicts.abilities import abilities_dict
 from dicts.names import name_dict
@@ -26,7 +26,9 @@ common_dict = {
     "Senses ": "Чувства ",
     "Senses: ": "Чувства ",
     " darkvision ": " тёмное зрение ",
+    "passive Perception": "пассивное Восприятие",
     "passive ": "пассивное ",
+    "Special Traits": "Особые черты",
     "Condition Immunities": "Иммунитет к состояниям",
     "Condition immunities": "Иммунитет к состояниям",
     "poisoned": "отравленный",
@@ -114,22 +116,6 @@ alignment_dict = {
     "any good alignment": "любое хорошее мировоззрение",
 }
 
-armor_dict = {
-    " shield": " щит",
-    "scale armor": "чешуйчатый доспех",
-    "scale mail": "чешуйчатый доспех",
-    "natural armor": "естественный доспех",
-    "with mage armor": "с магическим доспехом",
-    "studded leather": "проклёпанный кожаный доспех",
-    "Barkskin trait": "дубовая кора",
-    "chain mail": "кольчуга",
-    "chain shirt": "кольчужная рубаха",
-    "ring mail": "колечный",
-    "hide armor": "шкурный",
-    "plate": "латы",
-    "leather armor": "кожаный доспех",
-}
-
 lang_dict = {
     "Languages ": "Языки ",
     "Languages: ": "Языки ",
@@ -137,6 +123,7 @@ lang_dict = {
     "Bothii": "Ботхи",
     "Common": "Общий",
     "Celestial": "Небесный",
+    "Deep Speech": "Глубинная речь",
     "Draconic": "Драконий",
     "Dwarwish": "Дварфийский",
     "Elvish": "Эльфийский",
