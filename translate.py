@@ -5,7 +5,6 @@ import re
 # подцепляем словарь из внешнего файла
 import dicts.dicts as d
 
-
 def replace_lang(text, dic):
     """Заменялка для языков"""
     text = text.replace("Languages:", "Languages")
@@ -48,7 +47,9 @@ def fix_symbols(line):
         replace(b'\xc3\xa2\xc2\x80\xc2\x99'.decode('utf-8'), "'").\
         replace('Â¬', '').\
         replace('¬', '').\
-        replace("’", "'")
+        replace("’", "'").\
+        replace("(+O)", "(+0)").\
+        replace("(+l)", "(+1)")
     
     return line
 
@@ -161,6 +162,12 @@ def replacer(text, dic):
 
         """Замена всего оставшегося"""
         line = replace_other(line, dic)
+
+        """Исправление неправильных кубов"""
+        line = re.sub(r"(l)d([012468]{1,2})", r"1к\2", line)
+        line = re.sub(r"(lO)d([012468]{1,2})", r"10к\2", line)
+        line = re.sub(r"(ll)d([012468]{1,2})", r"11к\2", line)
+        line = re.sub(r"(S)d([012468]{1,2})", r"5к\2", line)
 
         """Замена кубов по всему тексту"""
         line = re.sub(r"(\d+)d(\d+)", r"\1к\2", line)
