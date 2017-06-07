@@ -90,7 +90,7 @@ def replacer(text, dic):
         line = fix_symbols(line)
         line_lower = line.lower()
         
-        if "languages" in line_lower:
+        if re.search("^languages", line_lower.strip(), re.IGNORECASE):
             line = replace_lang(line, d.lang_dict)
 
         elif "multiattack" in line_lower:
