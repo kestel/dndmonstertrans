@@ -114,6 +114,7 @@ alignment_dict = {
     "unaligned": "без мировоззрения",
     "any non-good alignment": "любое не хорошее мировоззрение",
     "any good alignment": "любое хорошее мировоззрение",
+    "any alignment": "любое мировоззрение",
 }
 
 lang_dict = {
