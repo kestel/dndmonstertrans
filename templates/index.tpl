@@ -2,11 +2,13 @@
 
 <p>Посмотреть <a href="/dict">Общий словарь</a> замены. Или <a href="/spell_dict">Словарь заклинаний</a></p>
 
+<div id="form">
 <form action="/translate" method="post">
-<textarea cols="80" rows="24" name="text" style="height:450px; width:650px"></textarea>
+<textarea cols="80" rows="24" name="text" style="height:450px; width:100%; max-width:600px"></textarea>
 <br />
-<input type="submit" style="height:50px; width:500px" value="Перевести текст"> <input type="reset" style="height:50px; width:150px" value="Очистить поле">
-</form><br />
+<input type="submit" style="height:50px; width:59%" value="Перевести"> <input type="reset" style="height:50px; width:39%" value="Очистить">
+</form></div>
+<br />
 
 <details>
 <summary><span>Пример перевода монстра (Rakshasa)</span></summary>
@@ -41,7 +43,7 @@ Claw: Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) 
 
 </textarea>
 <br />
-<input type="submit" style="height:50px; width:650px" value="Посмотреть пример перевода монстра Rakshasa">
+<input type="submit" style="height:50px; width:99%" value="Посмотреть пример перевода">
 </form></span>
 </details><br />
 
