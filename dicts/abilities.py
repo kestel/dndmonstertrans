@@ -104,5 +104,9 @@ abilities_dict = {
     "Benign Transposition": "Добровольная перестановка",
     "Charge": "Рывок",
     "blind beyond this radius": "слеп за пределами этого радиуса",
+    "Shocking Bolt": "Шокирующий Снаряд",
+    "": "",
+    "": "",
+    "": "",
     "": "",
 }

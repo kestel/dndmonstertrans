@@ -48,8 +48,8 @@ def fix_symbols(line):
         replace('Â¬', '').\
         replace('¬', '').\
         replace("’", "'").\
-        replace("(+O)", "(+0)").\
-        replace("(+l)", "(+1)")
+        replace("+O", "+0").\
+        replace("+l", "+1")
     
     return line
 

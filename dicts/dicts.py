@@ -81,7 +81,7 @@ common_dict = {
 
 damage_dict = {
 # типы урона
-    " lightning damage": " урон молнией",
+    " lightning damage": " урон электричеством",
     " damage ": " урон ",
     " damage.": " урон.",
     " damage,": " урон,",
@@ -94,7 +94,7 @@ damage_dict = {
     " poison": " яд",
     " psychic": " психический",
     " acid": " кислотный",
-    " lightning": " молния",
+    " lightning": " электрический",
     " necrotic": " некротический",
     " radiant": " излучение",
     " force": "силовым полем",
