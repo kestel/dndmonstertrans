@@ -1,7 +1,6 @@
 #-*- coding:utf-8 -*-
 
 weapon_dict = {
-# weapon
     "Battleaxe": "Боевой топор",
     "Blowgun": "Духовая трубка",
     "Club": "Дубинка",
@@ -42,6 +41,7 @@ weapon_dict = {
     "War pick": "Боевая кирка",
     "Warhammer": "Боевой молот",
     "Whip": "Кнут",
+    ### Абилки монстров
     "Rock": "Камень",
     "rock": "камень",
     "Bite": "Укус",
@@ -79,7 +79,14 @@ armor_dict = {
     "chain mail": "кольчуга",
     "chain shirt": "кольчужная рубаха",
     "ring mail": "колечный",
-    "hide armor": "шкурный",
+    "ring mail armor": "колечный доспех",
+    "hide armor": "шкурный доспех",
     "plate": "латы",
     "leather armor": "кожаный доспех",
+    "breastplate": "кираса",
+    "half plate armor": "полулаты",
+    "padded armor": "стёганный доспех",
+    "plate armor": "латы",
+    "splint armor": "наборный доспех",
+    "": "",
 }
