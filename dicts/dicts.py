@@ -131,6 +131,7 @@ lang_dict = {
     "Elvish": "Эльфийский",
     "Giant": "Язык гигантов",
     "Goblin": "Гоблинский",
+    "Hafling": "Халфлингов",
     "Ignan": "Игнан",
     "Infernal": "Инфернальный",
     "Orc": "Орочий",
@@ -138,6 +139,10 @@ lang_dict = {
     "Telepathy": "Телепатия",
     "Undercommon": "Подземный",
     "Yikaria ": "Икария",
+    "Aquan": "Акван",
+    "Auran": "Ауран",
+    "Terran": "Терран",
+    "Primordial": "Первичный",
 }
 
 condition_dict = {
