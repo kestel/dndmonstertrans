@@ -135,7 +135,7 @@ lang_dict = {
     "Ignan": "Игнан",
     "Infernal": "Инфернальный",
     "Orc": "Орочий",
-    "Sylvan": "Фейский",
+    "Sylvan": "Сильван",
     "Telepathy": "Телепатия",
     "Undercommon": "Подземный",
     "Yikaria ": "Икария",
