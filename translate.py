@@ -129,6 +129,9 @@ def replacer(text, dic):
             line = re.sub(r"([\s\w]+) has the following (?:(\w+)\s|)spells prepared",
                           r"\1 обладает следующими заготовленными заклинаниями \2",
                           line)
+        else:
+            """Замена всего оставшегося"""
+            line = replace_other(line, dic)
 
         # elif "pack tactics" in line_lower:
         line = re.sub(r"Pack Tactics. ([\s\w]+) has advantage on an attack roll against a creature if at least one of ([\s\w]+) allies.+",
@@ -159,9 +162,6 @@ def replacer(text, dic):
 
         # else:
         #    print(line_lower)
-
-        """Замена всего оставшегося"""
-        line = replace_other(line, dic)
 
         """Исправление неправильных кубов"""
         line = re.sub(r"(l)d([012468]{1,2})", r"1к\2", line)
