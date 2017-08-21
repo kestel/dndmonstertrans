@@ -1,8 +1,9 @@
 % include("templates/header.tpl", title="Словарь заклинаний")
 
-Вернуться на <a href='/'>главную</a>.<br /><br />
-
-<a href="#phb">PHB</a>&nbsp;&nbsp;<a href="#EE">Elemental Evil</a>&nbsp;&nbsp;<a href="#scag">Swords Coast Adventure Guide</a>&nbsp;&nbsp;<a href="#tfyp">Tales from Yawning Portal</a>&nbsp;&nbsp;
+<a href="#phb">PHB</a>&nbsp;&nbsp;
+<a href="#EE">Elemental Evil</a>&nbsp;&nbsp;
+<a href="#scag">Swords Coast Adventure Guide</a>&nbsp;&nbsp;
+<a href="#tfyp">Tales from Yawning Portal</a>&nbsp;&nbsp;
 
 
 <h3 id="phb">PHB</h3>

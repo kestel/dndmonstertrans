@@ -1,7 +1,5 @@
 % include("templates/header.tpl", title="Переводчик копи-паста!")
 
-<p>Посмотреть <a href="/dict">Общий словарь</a> замены. Или <a href="/spell_dict">Словарь заклинаний</a></p>
-
 <div id="form">
 <form action="/translate" method="post">
 <textarea cols="80" rows="24" name="text" style="height:450px; width:100%; max-width:600px"></textarea>

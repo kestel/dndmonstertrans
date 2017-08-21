@@ -22,3 +22,5 @@ pre { white-space: pre-wrap; }
 </head>
 
 <body>
+Вернуться на <a href='/'>главную</a>. <p>Посмотреть <a href="/dict">Общий словарь</a> замены или <a href="/spell_dict">Словарь заклинаний</a></p><br />
+

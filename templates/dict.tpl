@@ -1,12 +1,13 @@
 % include("templates/header.tpl", title="Словарь перевода")
 
-Вернуться на <a href='/'>главную</a>.<br /><br />
-
 <div id="menu"><a href="#common">Общий термины</a>&nbsp;&nbsp;<a href="#damage">Урон</a>&nbsp;&nbsp;
 <a href="#alignment">Мировоззрения</a>&nbsp;&nbsp;<a href="#creature">Описания существ</a>&nbsp;&nbsp;
 <a href="#lang">Языки</a>&nbsp;&nbsp;<a href="#condition">Состояния</a>&nbsp;&nbsp;
 <a href="#skill">Скиллы (навыки)</a>&nbsp;&nbsp;<a href="#armor">Доспехи</a>&nbsp;&nbsp;
-<a href="#weapon">Оружие</a>&nbsp;&nbsp;<a href="#race">Расы</a>&nbsp;&nbsp;<a href="#abilities">Способности</a>&nbsp;&nbsp;
+<a href="#weapon">Оружие</a>&nbsp;&nbsp;<a href="#tools">Инструменты</a>&nbsp;&nbsp;
+<a href="#equipment_packs">Наборы вещей</a>&nbsp;&nbsp;<a href="#mounts_vehicles">Средства передвижения</a>&nbsp;&nbsp;
+<a href="#adventuring_gear">Вещи для приключенцев</a>&nbsp;&nbsp
+<a href="#race">Расы</a>&nbsp;&nbsp;<a href="#abilities">Способности</a>&nbsp;&nbsp;
 <a href="#name">Имена</a>&nbsp;&nbsp;</div>
 
 
@@ -70,6 +71,34 @@
 <table border=0 width=500>
 %for elem in weapon_dict:
 <tr><td width="250">{{elem}}</td><td>{{weapon_dict[elem]}}</td></tr>
+%end
+</table>
+
+<h3 id="tools">Инструменты</h3>
+<table border=0 width=500>
+%for elem in tools_dict:
+<tr><td width="250">{{elem}}</td><td>{{tools_dict[elem]}}</td></tr>
+%end
+</table>
+
+<h3 id="equipment_packs">Наборы вещей</h3>
+<table border=0 width=500>
+%for elem in equipment_packs_dict:
+<tr><td width="250">{{elem}}</td><td>{{equipment_packs_dict[elem]}}</td></tr>
+%end
+</table>
+
+<h3 id="mounts_vehicles">Средства передвижения</h3>
+<table border=0 width=500>
+%for elem in mounts_vehicles_dict:
+<tr><td width="250">{{elem}}</td><td>{{mounts_vehicles_dict[elem]}}</td></tr>
+%end
+</table>
+
+<h3 id="adventuring_gear">Вещи для приключенцев</h3>
+<table border=0 width=500>
+%for elem in adventuring_gear_dict:
+<tr><td width="250">{{elem}}</td><td>{{adventuring_gear_dict[elem]}}</td></tr>
 %end
 </table>
 

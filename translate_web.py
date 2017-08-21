@@ -24,6 +24,10 @@ def print_dict():
                            skill_dict=d.skill_dict,
                            armor_dict=d.armor_dict,
                            weapon_dict=d.weapon_dict,
+                           tools_dict=d.tools_dict,
+                           equipment_packs_dict=d.equipment_packs_dict,
+                           mounts_vehicles_dict=d.mounts_vehicles_dict,
+                           adventuring_gear_dict=d.adventuring_gear_dict,
                            race_dict=d.race_dict,
                            abilities_dict=d.abilities_dict,
                            name_dict=d.name_dict)
