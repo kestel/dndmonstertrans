@@ -50,7 +50,7 @@ phb_spell = {
     "Chromatic orb": "Цветной шарик",
     "Circle of death": "Круг смерти",
     "Circle of power": "Круг силы",
-    "Clairvoyance": "Подсматривание",
+    "Clairvoyance": "Ясновидение",
     "Clone": "Двойник",
     "Cloud of daggers": "Облако кинжалов",
     "Cloudkill": "Облако смерти",
