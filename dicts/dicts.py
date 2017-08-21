@@ -1,7 +1,7 @@
 #-*- coding:utf-8 -*-
 
 from dicts.spells import spell_dict
-from dicts.items import weapon_dict, armor_dict
+from dicts.items import weapon_dict, armor_dict, equipment_packs_dict, tools_dict, mounts_vehicles_dict, adventuring_gear_dict
 from dicts.creatures import  creature_dict
 from dicts.abilities import abilities_dict
 from dicts.names import name_dict
