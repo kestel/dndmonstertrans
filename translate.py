@@ -78,6 +78,7 @@ def translate_spell(line):
     for spell in spell_list[1:]:
         spell_ru = replace_other_lower(spell.replace("'", "").strip(), d.spell_dict)
         newline = "{0} {1} [{2}], ".format(newline.strip(), spell_ru.strip(), spell.strip())
+    newline = replace_other(newline, dic)
 
     return newline[:-2]
 
