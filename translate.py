@@ -71,7 +71,7 @@ def replace_multiattack(line):
     return line
 
 
-def translate_spell(line):
+def translate_spell(line, dic):
     line = line.replace(";", ",").replace(":", ",")
     spell_list = line.split(",")
     newline = "{}:".format(spell_list[0])
@@ -101,7 +101,7 @@ def replacer(text, dic):
             line = replace_cr(line)
 
         elif re.search("Cantrip|[\d\w\s]{4}level|\d\/day\seach|At\swill", line, re.IGNORECASE):
-            line = translate_spell(line)
+            line = translate_spell(line, dic)
 
         elif "innate spellcasting" in line_lower:
             match = re.search(r"Innate Spellcasting. (?P<name>[\s\w\']+) innate spellcasting ability is (?P<abil>[\w]+)(?:[\s\(\w]+DC\s+(?P<dc>\d+)\)|)\.\s+(?:[\w\s]+) can innately cast the following spells, requiring (?P<comp>[\w\s]+) components", line)
