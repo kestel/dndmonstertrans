@@ -42,6 +42,7 @@ common_dict = {
     "Multiattack.": "Мультиатака.",
     "one target": "одна цель",
     "Hit: ": "Попадание: ",
+    "Melee or Ranged Weapon Attack:": "Рукопашная или дальнобойная атака оружием:",
     "Melee Weapon Attack:": "Рукопашная атака оружием:",
     "Melee Weapon attack:": "Рукопашная атака оружием:",
     "Ranged Weapon Attack: ": "Дальнобойная атака оружием: ",
