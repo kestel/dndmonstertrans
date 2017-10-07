@@ -26,6 +26,7 @@ common_dict = {
     "Senses ": "Чувства ",
     "Senses: ": "Чувства ",
     " darkvision ": " тёмное зрение ",
+    " truesight ": " истинное зрение ",
     "passive Perception": "пассивное Восприятие",
     "passive ": "пассивное ",
     "Special Traits": "Особые черты",
@@ -58,6 +59,7 @@ common_dict = {
     "telepathy": "телепатия",
     "understands": "понимает",
     "but can't speak": "но не может говорить",
+    "from nonmagical attacks": "от немагических атак",
 # параметры
     "STR": "СИЛ",
     "DEX": "ЛОВ",
