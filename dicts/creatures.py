@@ -21,7 +21,7 @@ creature_dict = {
     "beast": "зверь",
     "demon": "демон",
     "ooze": "слизь",
-    "construct": "конструкция",
+    "construct": "констракт",
     "devil": "дьявол",
     "dragon": "дракон",
     "aberration": "аберрация",
