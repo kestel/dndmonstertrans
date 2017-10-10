@@ -33,7 +33,7 @@ common_dict = {
     "Condition Immunities": "Иммунитет к состояниям",
     "Condition immunities": "Иммунитет к состояниям",
     "poisoned": "отравленный",
-    "tremorsense": "чувство дрожи",
+    "tremorsense": "чувство вибрации",
     "blindsight": "слепое зрение",
     "Challenge ": "Опасность ",
     " XP)": " опыта)",
@@ -53,6 +53,7 @@ common_dict = {
     "Ranged Spell Attack:": "Дальнобойная атака заклинанием:",
     " to hit, reach ": " к попаданию, досягаемость ",
     " to hit, range": " к попаданию, дистанция",
+    " or range ": " или дистанция ",
     "Cantrips": "Заговоры",
     "Cantrip": "Заговор",
     "at will": "неограниченно",
@@ -61,7 +62,7 @@ common_dict = {
     "understands": "понимает",
     "but can't speak": "но не может говорить",
     "from nonmagical attacks": "от немагических атак",
-# параметры
+    # параметры
     "STR": "СИЛ",
     "DEX": "ЛОВ",
     "CON": "ТЕЛ",
@@ -83,7 +84,7 @@ common_dict = {
 }
 
 damage_dict = {
-# типы урона
+    # типы урона
     " lightning damage": " урон электричеством",
     " damage ": " урон ",
     " damage.": " урон.",
@@ -104,7 +105,7 @@ damage_dict = {
 }
 
 alignment_dict = {
-# мировоззрения
+    # мировоззрения
     "chaotic evil": "хаотично-злой",
     "lawful evil": "законно-злой",
     "neutral evil": "нейтрально-злой",
@@ -126,6 +127,8 @@ lang_dict = {
     "Abyssal": "Бездны",
     "Bothii": "Ботхи",
     "Common": "Общий",
+    "Common plus any two languages": "Общий плюс два других языка",
+    "Common plus anyone language": "Общий плюс другой язык",
     "Celestial": "Небесный",
     "Deep Speech": "Глубинная речь",
     "Draconic": "Драконий",
@@ -209,6 +212,8 @@ race_dict = {
     "Aasimar": "Аасимар",
     "Half-Elf": "Полуэльф",
     " Elf ": " Эльф ",
+    "Tabaxi": "Табакси",
+    "tabaxi": "табакси",
 }
 
 
