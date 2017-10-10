@@ -66,7 +66,7 @@ def replace_cr(line):
 
 def replace_multiattack(line):
     line = line.replace("Multiattack", "Мультиатака").replace("melee attacks", "рукопашные атаки").\
-        replace("ranged attacks", "дальнобойные атаки").replace("attacks", "атаки").replace("makes", "делает")
+        replace("ranged attacks", "дальнобойные атаки").replace("attacks", "атаки").replace("makes", "совершает")
 
     return line
 
@@ -122,7 +122,7 @@ def replacer(text, dic):
 
         elif "spellcasting" in line_lower:
             line = re.sub(r"Spellcasting. ([\s\w]+) is a.? ([\d]+)[\w]+-level spellcaster.",
-                          r"Колдовство. \1 является заклинателем \2 уровня.",
+                          r"Использование заклинаний. \1 является заклинателем \2 уровня.",
                           line)
             line = re.sub(r"(?:[\s\w]+)spellcasting ability is (\w+) \(spell save(?:\sDC|)\s(\d+), ([\d+]+) to hit with spell attacks\).",
                           r" Его способность к заклинаниям основана на \1 (Сл спасброска от заклинаний \2, \3 к атакам заклинаниями).",
