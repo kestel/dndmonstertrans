@@ -42,7 +42,7 @@ abilities_dict = {
     "8th": "8-й",
     "9th": "9-й",
     "Innate Spellcasting": "Врождённое колдовство",
-    "Spellcasting": "Колдовство",
+    "Spellcasting": "Использование заклинаний",
     "Limited Magic Immunity": "Ограниченный иммунитет к магии",
     "Magic Immunity": "Иммунитет к магии",
     "Special Equipment": "Специальное снаряжение",
