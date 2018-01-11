@@ -66,7 +66,8 @@ def replace_cr(line):
 
 def replace_multiattack(line):
     line = line.replace("Multiattack", "Мультиатака").replace("melee attacks", "рукопашные атаки").\
-        replace("ranged attacks", "дальнобойные атаки").replace("attacks", "атаки").replace("makes", "совершает")
+        replace("ranged attacks", "дальнобойные атаки").replace("attacks", "атаки").replace("makes", "совершает").\
+        replace("two", "две").replace("three", "три").replace("one with", "одну с помощью")
 
     return line
 
@@ -79,7 +80,10 @@ def translate_spell(line, dic):
         spell_ru = replace_other_lower(spell.replace("'", "").strip(), d.spell_dict)
         newline = "{0} {1} [{2}], ".format(newline.strip(), spell_ru.strip(), spell.strip())
     newline = replace_other(newline, dic)
-
+    newline = newline.replace("Wisdom", "Мудрости").replace("Intelligence", "Интеллекте").\
+        replace("Charisma", "Харизме").replace("druid", "друида").replace("wizard", "чародея").\
+        replace("bard", "барда").replace("cleric", "жреца").replace("paladin", "паладина").\
+        replace("rander", "ренжера").replace("sorcerer", "волшебника").replace("warlock", "колдуна")
     return newline[:-2]
 
 
@@ -107,7 +111,8 @@ def replacer(text, dic):
             match = re.search(r"Innate Spellcasting. (?P<name>[\s\w\']+) innate spellcasting ability is (?P<abil>[\w]+)(?:[\s\(\w]+DC\s+(?P<dc>\d+)\)|)\.\s+(?:[\w\s]+) can innately cast the following spells, requiring (?P<comp>[\w\s]+) components", line)
             if match:
                 name = str(match.group("name"))
-                abil = str(match.group("abil"))
+                abil = str(match.group("abil")).replace("Wisdom", "Мудрости").replace("Intelligence", "Интеллекте").\
+                    replace("Charisma", "Харизме")
                 if match.group('dc'):
                     dc = int(match.group("dc"))
                 else:
