@@ -129,6 +129,7 @@ lang_dict = {
     "Common": "Общий",
     "Common plus any two languages": "Общий плюс два других языка",
     "Common plus anyone language": "Общий плюс другой язык",
+    "Understands the languages it knew in life but can’t speak": "Понимает язык, который знал при жизни, но не может говорить",
     "Celestial": "Небесный",
     "Deep Speech": "Глубинная речь",
     "Draconic": "Драконий",
