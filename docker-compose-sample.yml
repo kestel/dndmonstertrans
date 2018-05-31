@@ -1,0 +1,15 @@
+version: "2.2"
+
+services:
+  dndmonster:
+    build: .
+    command: python3.6 ./translate_web.py 8080
+    mem_limit: 128m
+    cpus: 0.5
+    stop_grace_period: 5s
+    restart: on-failure
+    logging:
+      options:
+        max-size: 16m
+    ports:
+      - "127.0.0.1:8080:8080"
