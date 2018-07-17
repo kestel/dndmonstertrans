@@ -55,11 +55,11 @@ def fix_symbols(line):
 
 
 def replace_cr(line):
-    match = re.search(r"Challenge[\s:]+(?P<cr>[\d\/]+)\s\((?P<xp>[\d\s,]+)\sXP\)", line)
+    match = re.search(r"Challenge[\s:]+(?P<cr>[\d\/]+)\s\((?P<xp>[\d\s,]+)\sXP\)?", line)
     if match:
         cr = str(match.group('cr'))
         xp = int(match.group('xp').replace(" ", "").replace(",", ""))
-    line = "Опасность {cr} ({xp} опыта)".format(cr=cr, xp=xp)
+        line = "Опасность {cr} ({xp} опыта)".format(cr=cr, xp=xp)
     
     return line
 
